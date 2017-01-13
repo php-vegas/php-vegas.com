@@ -11,10 +11,25 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+/**
+ * Authenticated Routes
+ */
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+/**
+ * Front Facing Routes
+ */
+Route::get('/', 'HomeController@index')
+    ->name('home');
+Route::get('/our-sponsors', 'SponsorsController@index')
+    ->name('out-sponsors');
+Route::get('/out-sponsors/sponsorship-information', 'SponsorshipInformationController@index')
+    ->name('sponsor-info');
+Route::get('/previous-talks','PreviousTalksController@index')
+    ->name('prev-talks');
+Route::get('/meetup-events', 'MeetupEventsController@index')
+    ->name('meetup-events');
+Route::get('/meetup-events/request-topic', 'TopicRequestsController@index')
+    ->name('request-topic');
+Route::get('/contact', 'ContactController@index')
+    ->name('contact');
