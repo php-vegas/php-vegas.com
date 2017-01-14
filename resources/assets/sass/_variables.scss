@@ -35,3 +35,22 @@ $input-color-placeholder: lighten($text-color, 30%);
 
 // Panels
 $panel-default-heading-bg: #fff;
+
+// Color Variables
+$white: #FFF;
+$off-white: #ECEDEE;
+$darker-white: #CBCBCB;
+
+$lighter-grey: #DBDBDB;
+$grey: #9B9B9B;
+$darker-grey: #6b6b6b;
+
+$lighter-black: #3b3b3b;
+$off-black: #1b1b1b;
+$black: #000;
+
+$php-purple-light: #8892BF;
+$php-purple-dark: #4F5B93;
+$php-purple-faint: lighten($php-purple-dark, 80%);
+
+$radius: 4px;

@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')
     ->name('home');
 Route::get('/our-sponsors', 'SponsorsController@index')
-    ->name('out-sponsors');
+    ->name('our-sponsors');
 Route::get('/out-sponsors/sponsorship-information', 'SponsorshipInformationController@index')
     ->name('sponsor-info');
 Route::get('/previous-talks','PreviousTalksController@index')
