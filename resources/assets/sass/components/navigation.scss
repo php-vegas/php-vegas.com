@@ -1,3 +1,7 @@
+.navbar-brand {
+  height: auto !important;
+}
+
 .dropdown-menu li:hover .sub-menu {
   visibility: visible;
 }
@@ -6,4 +10,20 @@
   display: block;
   left: 0;
   right: auto;
+  margin: -34px 0 0 !important;
+}
+
+.navbar-nav > li > a {
+  margin: 33px 0 34px 10px;
+  padding: 10px 15px;
+  border-radius: $radius;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  color: $black !important;
+  transition: all .3s;
+  &:hover {
+    color: $white !important;
+    background: $php-purple-light !important;
+  }
 }
