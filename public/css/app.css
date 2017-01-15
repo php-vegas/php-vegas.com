@@ -7688,6 +7688,10 @@ button.close {
   }
 }
 
+.navbar-default {
+  background: rgba(255, 255, 255, 0.8);
+}
+
 .navbar-brand {
   height: auto !important;
 }
@@ -7716,7 +7720,7 @@ button.close {
 }
 
 .navbar-nav > li > a {
-  margin: 38px 5px 38px 5px;
+  margin: 37px 5px 38px 5px;
   padding: 10px 15px;
   border-radius: 4px;
   text-transform: uppercase;
@@ -7730,6 +7734,71 @@ button.close {
 .navbar-nav > li > a:hover {
   color: #FFF !important;
   background: #8892BF !important;
+}
+
+.hero-banner {
+  position: relative;
+}
+
+.hero-banner img {
+  margin-top: -280px;
+  max-width: 100%;
+}
+
+.hero-banner .caption {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  max-width: 50%;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.hero-banner .caption .headline {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4F5B93;
+  margin: 0 0 20px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.hero-banner .caption p {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 20px;
+}
+
+.hero-banner:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.btn {
+  border: 0;
+  border-radius: 4px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.btn.btn-primary {
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 400;
+  background: #4F5B93;
+}
+
+.btn.btn-primary:hover {
+  background: #8892BF;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,17 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
 
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
+    <section class="hero-banner">
+        <img src="{{ asset('img/bg-2.jpg') }}" alt="Welcome To Sunny PHP Vegas!" />
+        <div class="caption">
+            <h3 class="headline">
+                Come And Meetup!
+            </h3>
+            <p>
+                We have our monthly meetup scheduled to take place on the first thursday of each month. We have
+                members of all skill levels, and we cover topics of all types!
+            </p>
+            <a href="{{ route('meetup-events') }}" class="btn btn-primary">
+                RSVP For The Meetup
+            </a>
         </div>
-    </div>
-</div>
+    </section>
+
 @endsection
