@@ -2,19 +2,30 @@
   height: auto !important;
 }
 
-.dropdown-menu li:hover .sub-menu {
-  visibility: visible;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-  left: 0;
-  right: auto;
-  margin: -34px 0 0 !important;
+.dropdown:hover {
+  .dropdown-menu {
+    display: block;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    border-radius: $radius;
+    box-shadow: none !important;
+    margin: -24px 0 0 !important;
+    border: 1px solid $php-purple-light;
+    &:before {
+      content: " ";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      border: 10px solid transparent;
+      border-bottom-color: $php-purple-light;
+      transform: translateX(-50%);
+    }
+  }
 }
 
 .navbar-nav > li > a {
-  margin: 38px 0 38px 10px;
+  margin: 38px 5px 38px 5px;
   padding: 10px 15px;
   border-radius: $radius;
   text-transform: uppercase;
