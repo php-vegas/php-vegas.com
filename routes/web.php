@@ -31,5 +31,7 @@ Route::get('/meetup-events', 'MeetupEventsController@index')
     ->name('meetup-events');
 Route::get('/meetup-events/request-topic', 'TopicRequestsController@index')
     ->name('request-topic');
+Route::post('/meetup-events/request-topic/insert', 'TopicRequestsController@insert')
+    ->name('insert-topic-request');
 Route::get('/contact', 'ContactController@index')
     ->name('contact');

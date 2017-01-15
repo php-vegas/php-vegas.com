@@ -14,6 +14,11 @@ class TopicRequestsController extends Controller
 
     }
 
+    /**
+     * Returns the view for the request form.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         return view('requests');
