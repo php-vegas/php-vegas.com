@@ -7801,4 +7801,30 @@ button.close {
   background: #8892BF;
 }
 
+.page-heading {
+  position: relative;
+  padding: 140px 0 40px;
+  background: url("/img/bg-2.jpg") center center;
+  background-size: cover !important;
+}
+
+.page-heading .page-title {
+  position: relative;
+  z-index: 99;
+  font-size: 36px;
+  font-weight: 700;
+  color: #4F5B93;
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.page-heading:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
 /*# sourceMappingURL=app.css.map */
