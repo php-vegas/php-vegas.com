@@ -1,0 +1,37 @@
+.meetup-events-list {
+  padding: 60px 0;
+  background: $white;
+  .event {
+    background: $off-white;
+    padding: 20px;
+    margin: 0 0 30px;
+    border-radius: $radius;
+    overflow: hidden;
+    .heading-meta,
+    .footer-meta {
+      padding: 5px 10px;
+      margin: -20px -20px 20px -20px;
+      background: $php-purple-faint;
+      color: $black;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .event-name {
+      font-size: 28px;
+      font-weight: bold;
+      color: $php-purple-dark;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      color: $black;
+    }
+    .learn-more {
+      width: 100%;
+    }
+    .footer-meta {
+      margin: 20px -20px -20px -20px;
+    }
+  }
+}

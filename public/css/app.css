@@ -7827,4 +7827,48 @@ button.close {
   background: rgba(255, 255, 255, 0.6);
 }
 
+.meetup-events-list {
+  padding: 60px 0;
+  background: #FFF;
+}
+
+.meetup-events-list .event {
+  background: #ECEDEE;
+  padding: 20px;
+  margin: 0 0 30px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.meetup-events-list .event .heading-meta,
+.meetup-events-list .event .footer-meta {
+  padding: 5px 10px;
+  margin: -20px -20px 20px -20px;
+  background: #aab1d1;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.meetup-events-list .event .event-name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4F5B93;
+}
+
+.meetup-events-list .event p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+}
+
+.meetup-events-list .event .learn-more {
+  width: 100%;
+}
+
+.meetup-events-list .event .footer-meta {
+  margin: 20px -20px -20px -20px;
+}
+
 /*# sourceMappingURL=app.css.map */
