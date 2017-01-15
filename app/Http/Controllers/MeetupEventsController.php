@@ -18,6 +18,12 @@ class MeetupEventsController extends Controller
      */
     protected $meetupClient;
 
+    /**
+     * MeetupEventsController constructor.
+     *
+     * @param Redis $redis
+     * @param MeetupKeyAuthClient $meetupKeyAuthClient
+     */
     public function __construct(Redis $redis, MeetupKeyAuthClient $meetupKeyAuthClient)
     {
         $this->redisClient  = $redis;
@@ -26,6 +32,13 @@ class MeetupEventsController extends Controller
         ]);
     }
 
+    /**
+     * This is the index function for the meetup event archive. It makes
+     * an API call to the meetup API and then passes those dates with
+     * there data to the view for display to the user.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $events = $this->meetupClient->getEvents([
