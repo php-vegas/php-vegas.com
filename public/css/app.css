@@ -7894,6 +7894,38 @@ button.close {
   margin: 0;
 }
 
+.cta-row {
+  padding: 60px 0;
+}
+
+.cta-row .cta {
+  background: #FFF;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.cta-row .cta .title {
+  text-align: center;
+  color: #4F5B93;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.cta-row .cta .tagline {
+  font-size: 14px;
+  text-align: center;
+  color: #000;
+}
+
+.cta-row .cta .btn {
+  width: 100%;
+  text-align: center;
+}
+
+/**
+ * Tag/ID Site Wide CSS
+ */
 body {
   background: url("/img/content-bg-2.png");
 }

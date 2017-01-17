@@ -18,4 +18,47 @@
         </div>
     </section>
 
+    <section class="cta-row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="cta">
+                        <i class="fa fa-meetup"></i>
+                        <h3 class="title">Meetup Monthly!</h3>
+                        <p class="tagline">
+                            Every month we get together and talk about interesting topics in the PHP community.
+                        </p>
+                        <a href="{{ route('meetup-events') }}" class="btn btn-primary">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="cta">
+                        <i class="fa fa-meetup"></i>
+                        <h3 class="title">Meetup Monthly!</h3>
+                        <p class="tagline">
+                            Every month we get together and talk about interesting topics in the PHP community.
+                        </p>
+                        <a href="{{ route('meetup-events') }}" class="btn btn-primary">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="cta">
+                        <i class="fa fa-meetup"></i>
+                        <h3 class="title">Meetup Monthly!</h3>
+                        <p class="tagline">
+                            Every month we get together and talk about interesting topics in the PHP community.
+                        </p>
+                        <a href="{{ route('meetup-events') }}" class="btn btn-primary">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 @endsection
