@@ -1,0 +1,15 @@
+.panel {
+  padding: 20px;
+  border: 1px solid $darker-white;
+  .panel-heading {
+    padding: 20px;
+    margin: -20px -20px 20px;
+    background: $off-white;
+    color: $php-purple-dark;
+    border-bottom: 1px solid $darker-white;
+  }
+  .panel-body {
+    padding: 0;
+    margin: 0;
+  }
+}
