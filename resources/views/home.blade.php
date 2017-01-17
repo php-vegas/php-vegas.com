@@ -35,24 +35,24 @@
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <div class="cta">
-                        <i class="fa fa-meetup"></i>
-                        <h3 class="title">Meetup Monthly!</h3>
+                        <i class="fa fa-users"></i>
+                        <h3 class="title">Our Sponsors!</h3>
                         <p class="tagline">
-                            Every month we get together and talk about interesting topics in the PHP community.
+                            We have a group of amazing sponsors that make this all possible, check them out!
                         </p>
-                        <a href="{{ route('meetup-events') }}" class="btn btn-primary">
+                        <a href="{{ route('our-sponsors') }}" class="btn btn-primary">
                             Learn More
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <div class="cta">
-                        <i class="fa fa-meetup"></i>
-                        <h3 class="title">Meetup Monthly!</h3>
+                        <i class="fa fa-slack"></i>
+                        <h3 class="title">Where To Find Us?</h3>
                         <p class="tagline">
-                            Every month we get together and talk about interesting topics in the PHP community.
+                            If you need help, or are just wanting to stay up to date, check out our contact info.
                         </p>
-                        <a href="{{ route('meetup-events') }}" class="btn btn-primary">
+                        <a href="{{ route('contact') }}" class="btn btn-primary">
                             Learn More
                         </a>
                     </div>

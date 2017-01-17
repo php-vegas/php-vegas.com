@@ -7904,6 +7904,14 @@ button.close {
   border-radius: 4px;
 }
 
+.cta-row .cta i {
+  width: 100%;
+  text-align: center;
+  color: #8892BF;
+  font-size: 96px;
+  line-height: 112px;
+}
+
 .cta-row .cta .title {
   text-align: center;
   color: #4F5B93;
