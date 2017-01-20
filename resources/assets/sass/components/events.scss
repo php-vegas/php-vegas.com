@@ -62,4 +62,12 @@
     text-align: justify;
     margin: 0 0 30px;
   }
+  .home-event-map {
+    min-height: 315px;
+    border-radius: $radius;
+    overflow: hidden !important;
+  }
+  .btn {
+    width: 100%;
+  }
 }

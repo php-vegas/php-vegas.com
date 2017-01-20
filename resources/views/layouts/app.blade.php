@@ -100,11 +100,11 @@
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <ul class="social-links">
-                                <li>
-                                    <a href="" target="_blank">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
+                                {{--<li>--}}
+                                    {{--<a href="" target="_blank">--}}
+                                        {{--<i class="fa fa-facebook"></i>--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
                                 <li>
                                     <a href="https://twitter.com/PHPVegas" target="_blank">
                                         <i class="fa fa-twitter"></i>

@@ -86,7 +86,10 @@
                                 </a>
                             </div>
                             <div class="col-md-6 col-sm-12">
-                                Map Goes here
+                                <div class="home-event-map"
+                                     id="home-event-map"
+                                     data-lat="{{ $event['venue']['lat'] }}"
+                                     data-lon="{{ $event['venue']['lon'] }}"></div>
                             </div>
                         </div>
                     </div>
@@ -98,6 +101,5 @@
 @endsection
 
 @section('scripts')
-    <script src="https://maps.googleapis.com/maps/api/js?key={{ getenv('MAPS_JS_API_KEY') }}&callback=initMap"
-            async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ getenv('MAPS_JS_API_KEY') }}"></script>
 @endsection

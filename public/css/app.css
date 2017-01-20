@@ -7903,6 +7903,16 @@ button.close {
   margin: 0 0 30px;
 }
 
+.current-event .home-event-map {
+  min-height: 315px;
+  border-radius: 4px;
+  overflow: hidden !important;
+}
+
+.current-event .btn {
+  width: 100%;
+}
+
 .request-form {
   margin: 60px 0;
 }
