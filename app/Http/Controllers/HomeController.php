@@ -3,17 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DMS\Service\Meetup\MeetupKeyAuthClient;
 
 class HomeController extends Controller
 {
+    protected $meetupClient;
+
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param MeetupKeyAuthClient $meetupKeyAuthClient
      */
-    public function __construct()
+    public function __construct(MeetupKeyAuthClient $meetupKeyAuthClient)
     {
-//        $this->middleware('auth');
+        $this->meetupClient = $meetupKeyAuthClient::factory([
+            'key' => getenv('MEETUP_API_KEY'),
+        ]);
     }
 
     /**
@@ -23,6 +28,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $event = $this->meetupClient->getEvents([
+            'group_urlname' => 'PHP-vegas',
+        ])->getData()[0];
+
+        return view('home', [
+            'event' => $event,
+        ]);
     }
 }

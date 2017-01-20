@@ -61,4 +61,8 @@
         </div>
     </section>
 
+    <section class="current-event">
+
+    </section>
+
 @endsection
