@@ -1,0 +1,55 @@
+footer {
+  .social-media {
+    padding: 40px 0;
+    background: $php-purple-light;
+    .headline {
+      font-size: 32px;
+      font-weight: bold;
+      color: $white;
+      text-transform: uppercase;
+      margin: 0;
+      line-height: 70px;
+      text-align: center;
+    }
+    .social-links {
+      display: block;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      li {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 0;
+        a {
+          color: $php-purple-light;
+          background: $white;
+          font-size: 28px;
+          padding: 0;
+          line-height: 70px;
+          text-align: center;
+          display: block;
+          height: 70px;
+          width: 70px;
+          border-radius: 100%;
+          transition: all .3s;
+          &:hover {
+            background: $php-purple-dark;
+          }
+        }
+      }
+    }
+  }
+  .copy-right-line {
+    padding: 40px 0;
+    background: $php-purple-dark;
+    p {
+      text-align: center;
+      color: $white;
+      font-weight: bold;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
