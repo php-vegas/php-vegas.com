@@ -62,7 +62,42 @@
     </section>
 
     <section class="current-event">
-
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="event">
+                        <div class="heading-meta">
+                            {{ $event['venue']['name'] }} //
+                            {{ $event['venue']['address_1'] }}
+                            {{ $event['venue']['city'] }},
+                            {{ $event['venue']['state'] }}
+                            {{ $event['venue']['zip'] }} //
+                            Date: {{ date("M d, Y", ($event['time'] / 1000)) }} //
+                            RSVPs: {{ $event['yes_rsvp_count'] }}
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <h3 class="event-name">
+                                    {{ $event['name'] }}
+                                </h3>
+                                {!! $event['description'] !!}
+                                <a href="{{ $event['event_url'] }}" target="_blank" class="learn-more btn btn-primary">
+                                    Learn More
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                Map Goes here
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
+@endsection
+
+@section('scripts')
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ getenv('MAPS_JS_API_KEY') }}&callback=initMap"
+            async defer></script>
 @endsection

@@ -88,9 +88,16 @@
         </nav>
 
         @yield('content')
+
+        <footer>
+            <section class="copy-right-line">
+                <p>Copyright {{ date("Y") }} All Rights Reserved &copy; PHP Vegas Meetup Group</p>
+            </section>
+        </footer>
     </div>
 
     <!-- Scripts -->
+    @yield('scripts')
     <script src="/js/app.js"></script>
 </body>
 </html>
