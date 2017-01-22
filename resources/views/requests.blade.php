@@ -22,6 +22,7 @@
                         <h3 class="panel-heading">Submit Request Below</h3>
                         <div class="panel-body">
                             <form action="{{ route('insert-topic-request') }}" method="post">
+                                {{ csrf_field() }}
                                 <div class="form-group row">
                                     <div class="col-md-6 col-sm-12">
                                         <label for="fname">First Name *</label>
