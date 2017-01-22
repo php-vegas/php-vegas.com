@@ -1,0 +1,35 @@
+.sponsors {
+  padding: 60px 0 30px;
+  .sponsor {
+    background: $white;
+    padding: 20px;
+    margin-bottom: 30px;
+    .logo-wrapper {
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      i {
+        font-size: 46px;
+        color: $php-purple-dark;
+      }
+    }
+    .sponsor-name {
+      font-size: 20px;
+      font-weight: bold;
+      color: $php-purple-dark;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    p {
+      text-align: center;
+      color: $black;
+      font-size: 16px;
+    }
+    .btn {
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      display: block;
+    }
+  }
+}

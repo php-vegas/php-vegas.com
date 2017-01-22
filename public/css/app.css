@@ -7972,6 +7972,48 @@ button.close {
   text-align: center;
 }
 
+.sponsors {
+  padding: 60px 0 30px;
+}
+
+.sponsors .sponsor {
+  background: #FFF;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.sponsors .sponsor .logo-wrapper {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+
+.sponsors .sponsor .logo-wrapper i {
+  font-size: 46px;
+  color: #4F5B93;
+}
+
+.sponsors .sponsor .sponsor-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4F5B93;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sponsors .sponsor p {
+  text-align: center;
+  color: #000;
+  font-size: 16px;
+}
+
+.sponsors .sponsor .btn {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  display: block;
+}
+
 footer .social-media {
   padding: 40px 0;
   background: #8892BF;
