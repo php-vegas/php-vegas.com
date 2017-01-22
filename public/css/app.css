@@ -7832,6 +7832,14 @@ button.close {
   padding: 60px 0;
 }
 
+.meetup-events-list .current-event .heading-meta {
+  border-radius: 4px 4px 0 0;
+}
+
+.meetup-events-list .current-event .home-event-map {
+  min-height: 272px;
+}
+
 .meetup-events-list .event {
   border: 1px solid #CBCBCB;
   background: #FFF;
@@ -7980,6 +7988,7 @@ button.close {
   background: #FFF;
   padding: 20px;
   margin-bottom: 30px;
+  border-radius: 4px;
 }
 
 .sponsors .sponsor .logo-wrapper {

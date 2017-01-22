@@ -1,5 +1,13 @@
 .meetup-events-list {
   padding: 60px 0;
+  .current-event {
+    .heading-meta {
+      border-radius: $radius $radius 0 0;
+    }
+    .home-event-map {
+      min-height: 272px;
+    }
+  }
   .event {
     border: 1px solid $darker-white;
     background: $white;
