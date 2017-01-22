@@ -12,6 +12,9 @@ class TopicRequested extends Mailable
 {
     use Queueable, SerializesModels;
 
+    /**
+     * @var Request
+     */
     public $topic;
 
     /**

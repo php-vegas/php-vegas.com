@@ -14,8 +14,24 @@
         </div>
     </section>
 
-    <section class="thanks-content">
-        <p>{{ $content }}</p>
+    <section class="thanks-content" style="padding: 60px 0 30px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-md-offset-3">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <p>{{ $content }}</p>
+                            <p>You will now be redirected to the homepage...</p>
+                        </div>
+                    </div>
+                    <script>
+                        window.onload = setTimeout(function () {
+                            window.location = '{{ route('home') }}';
+                        }, 2000);
+                    </script>
+                </div>
+            </div>
+        </div>
     </section>
 
 @endsection

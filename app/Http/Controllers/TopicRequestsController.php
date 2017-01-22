@@ -35,7 +35,7 @@ class TopicRequestsController extends Controller
     {
         Mail::to(getenv('MAIL_TO'))->send(new TopicRequested($request));
 
-        return redirect('/out-sponsors/sponsorship-information');
+        return redirect('/meetup-events/request-topic/thanks');
     }
 
     /**
