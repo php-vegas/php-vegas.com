@@ -54,13 +54,13 @@
                         </li>
                         <li class="dropdown">
                             <a href="{{ route('our-sponsors') }}">Our Sponsors</a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="{{ route('sponsor-info') }}">
-                                        Sponsor Information
-                                    </a>
-                                </li>
-                            </ul>
+                            {{--<ul class="dropdown-menu">--}}
+                                {{--<li>--}}
+                                    {{--<a href="{{ route('sponsor-info') }}">--}}
+                                        {{--Sponsor Information--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                            {{--</ul>--}}
                         </li>
                         <li class="dropdown">
                             <a href="{{ route('meetup-events') }}">Meetup Events</a>
@@ -95,7 +95,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <h3 class="headline">
-                                Find Us On Social Media
+                                Find Us Online
                             </h3>
                         </div>
                         <div class="col-md-6 col-sm-12">
@@ -105,6 +105,11 @@
                                         {{--<i class="fa fa-facebook"></i>--}}
                                     {{--</a>--}}
                                 {{--</li>--}}
+                                <li>
+                                    <a href="https://github.com/php-vegas" target="_blank">
+                                        <i class="fa fa-github"></i>
+                                    </a>
+                                </li>
                                 <li>
                                     <a href="https://twitter.com/PHPVegas" target="_blank">
                                         <i class="fa fa-twitter"></i>
