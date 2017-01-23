@@ -42,3 +42,20 @@
     background: $php-purple-light !important;
   }
 }
+
+@media(max-width: 639px) {
+  .navbar-brand {
+    max-width: 100px;
+    img {
+      max-width: 100%;
+    }
+  }
+  .navbar-toggle {
+    padding: 16px 15px !important;
+  }
+
+  .navbar-nav > li > a {
+    margin: 0;
+    padding: 10px 15px;
+  }
+}

@@ -34,3 +34,12 @@
     }
   }
 }
+
+@media(max-width: 639px) {
+  .sponsors {
+    padding: 15px 0 0;
+    .sponsor {
+      margin: 0 0 15px;
+    }
+  }
+}

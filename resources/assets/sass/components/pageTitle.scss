@@ -22,3 +22,12 @@
     background: transparentize($white, .4);
   }
 }
+
+@media(max-width: 639px) {
+  .page-heading {
+    padding: 10px 0;
+    .page-title {
+      font-size: 28px;
+    }
+  }
+}

@@ -29,3 +29,13 @@
     }
   }
 }
+
+@media(max-width: 639px) {
+  .cta-row {
+    padding: 15px 0 0;
+    .cta {
+      padding: 15px;
+      margin: 0 0 15px;
+    }
+  }
+}

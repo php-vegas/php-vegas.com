@@ -41,3 +41,9 @@ body {
   position: relative;
   z-index: 99;
 }
+
+@media(max-width: 630px) {
+  body {
+    padding-top: 64px;
+  }
+}

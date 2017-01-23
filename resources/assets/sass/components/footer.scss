@@ -53,3 +53,15 @@ footer {
     }
   }
 }
+
+@media(max-width: 639px) {
+  footer {
+    .social-media {
+      padding: 15px 0;
+      .headline {
+        font-size: 20px;
+        margin: 0 0 15px;
+      }
+    }
+  }
+}
