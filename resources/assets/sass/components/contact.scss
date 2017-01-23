@@ -29,3 +29,13 @@
     }
   }
 }
+
+@media(max-width: 639px) {
+  .contact-content {
+    padding: 15px 0 0;
+    .service {
+      padding: 15px;
+      margin: 0 0 15px;
+    }
+  }
+}

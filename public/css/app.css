@@ -7750,6 +7750,26 @@ button.close {
     margin: 0;
     padding: 10px 15px;
   }
+  .dropdown .dropdown-menu,
+  .dropdown:hover .dropdown-menu {
+    position: relative !important;
+    display: block !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    margin: 0 0 10px !important;
+    border: 1px solid #8892BF !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-radius: 0 !important;
+  }
+  .dropdown .dropdown-menu:before,
+  .dropdown:hover .dropdown-menu:before {
+    content: " ";
+    display: none;
+  }
 }
 
 .hero-banner {
@@ -7970,10 +7990,22 @@ button.close {
     margin: 0 0 15px;
     font-size: 14px;
   }
+  .meetup-events-list {
+    padding: 15px 0 0;
+  }
+  .meetup-events-list .event {
+    margin: 0 0 15px;
+  }
 }
 
 .request-form {
   margin: 60px 0;
+}
+
+@media (max-width: 639px) {
+  .request-form {
+    margin: 15px 0;
+  }
 }
 
 .panel {
@@ -8128,6 +8160,16 @@ button.close {
 .contact-content .service .btn {
   width: 100%;
   text-align: center;
+}
+
+@media (max-width: 639px) {
+  .contact-content {
+    padding: 15px 0 0;
+  }
+  .contact-content .service {
+    padding: 15px;
+    margin: 0 0 15px;
+  }
 }
 
 footer .social-media {

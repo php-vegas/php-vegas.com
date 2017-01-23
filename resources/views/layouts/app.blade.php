@@ -63,11 +63,11 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="{{ route('prev-talks') }}">
-                                Previous Talks
-                            </a>
-                        </li>
+                        {{--<li>--}}
+                            {{--<a href="{{ route('prev-talks') }}">--}}
+                                {{--Previous Talks--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
                         <li>
                             <a href="{{ route('contact') }}">
                                 Contact
