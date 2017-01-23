@@ -7,6 +7,6 @@ Email: {{ $topic->get('email') }}
 <br />
 Phone: {{ $topic->get('phone') }}
 <br />
-Reqeust:
+Request:
 <br />
 {{ $topic->get('request') }}

@@ -1,0 +1,31 @@
+.contact-content {
+  padding: 60px 0;
+  .service {
+    background: $white;
+    padding: 20px;
+    border-radius: $radius;
+    i {
+      width: 100%;
+      text-align: center;
+      color: $php-purple-light;
+      font-size: 96px;
+      line-height: 112px;
+    }
+    .headline {
+      text-align: center;
+      color: $php-purple-dark;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .tagline {
+      font-size: 16px;
+      text-align: center;
+      color: $black;
+    }
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

@@ -8023,6 +8023,43 @@ button.close {
   display: block;
 }
 
+.contact-content {
+  padding: 60px 0;
+}
+
+.contact-content .service {
+  background: #FFF;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.contact-content .service i {
+  width: 100%;
+  text-align: center;
+  color: #8892BF;
+  font-size: 96px;
+  line-height: 112px;
+}
+
+.contact-content .service .headline {
+  text-align: center;
+  color: #4F5B93;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.contact-content .service .tagline {
+  font-size: 16px;
+  text-align: center;
+  color: #000;
+}
+
+.contact-content .service .btn {
+  width: 100%;
+  text-align: center;
+}
+
 footer .social-media {
   padding: 40px 0;
   background: #8892BF;
