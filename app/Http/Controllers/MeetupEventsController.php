@@ -2,48 +2,39 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redis;
-use DMS\Service\Meetup\MeetupKeyAuthClient;
+use Illuminate\View\View;
+use App\Services\MeetupService;
 
+/**
+ * Class MeetupEventsController
+ *
+ * @package App\Http\Controllers
+ */
 class MeetupEventsController extends Controller
 {
     /**
-     * @var Redis
+     * @var MeetupService
      */
-    protected $redisClient;
-
-    /**
-     * @var MeetupKeyAuthClient
-     */
-    protected $meetupClient;
+    protected $meetupService;
 
     /**
      * MeetupEventsController constructor.
      *
-     * @param Redis $redis
-     * @param MeetupKeyAuthClient $meetupKeyAuthClient
+     * @param MeetupService $meetupService
      */
-    public function __construct(Redis $redis, MeetupKeyAuthClient $meetupKeyAuthClient)
+    public function __construct(MeetupService $meetupService)
     {
-        $this->redisClient  = $redis;
-        $this->meetupClient = $meetupKeyAuthClient::factory([
-            'key' => getenv('MEETUP_API_KEY'),
-        ]);
+        $this->meetupService = $meetupService;
     }
 
     /**
-     * This is the index function for the meetup event archive. It makes
-     * an API call to the meetup API and then passes those dates with
-     * there data to the view for display to the user.
+     * This shows the events archive page.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return View
      */
-    public function index()
+    public function index(): View
     {
-        $events = $this->meetupClient->getEvents([
-            'group_urlname' => 'PHP-vegas',
-        ])->getData();
+        $events = $this->meetupService->latestEvents();
 
         return view('events', [
             'events' => $events,

@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\View\View;
 
+/**
+ * Class ContactController
+ *
+ * @package App\Http\Controllers
+ */
 class ContactController extends Controller
 {
     /**
      * Displays the contact page
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return View
      */
-    public function index()
+    public function index(): View
     {
         return view('contact');
     }

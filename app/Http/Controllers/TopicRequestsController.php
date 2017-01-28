@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\TopicRequested;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
+use App\Mail\TopicRequested;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\RedirectResponse;
 
+/**
+ * Class TopicRequestsController
+ *
+ * @package App\Http\Controllers
+ */
 class TopicRequestsController extends Controller
 {
     /**
-     * TopicRequestsController constructor.
-     */
-    public function __construct()
-    {
-    }
-
-    /**
      * Returns the view for the request form.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return View
      */
-    public function index()
+    public function index(): View
     {
         return view('requests');
     }
@@ -29,9 +29,9 @@ class TopicRequestsController extends Controller
      * Sends an email and then redirects you to the thank you page.
      *
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return RedirectResponse
      */
-    public function insert(Request $request)
+    public function insert(Request $request): RedirectResponse
     {
         Mail::to(getenv('MAIL_TO'))->send(new TopicRequested($request));
 
@@ -41,9 +41,9 @@ class TopicRequestsController extends Controller
     /**
      * Displays the thank you page for sending in a topic request.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return View
      */
-    public function thanks()
+    public function thanks(): View
     {
         return view('thanks', [
             'title'   => 'Thanks For Requesting A Topic',

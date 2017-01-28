@@ -2,26 +2,39 @@
 
 namespace App\Http\Controllers;
 
-use DMS\Service\Meetup\MeetupKeyAuthClient;
-use Illuminate\Http\Request;
+use App\Services\MeetupService;
+use Illuminate\View\View;
 
+/**
+ * Class SponsorsController
+ *
+ * @package App\Http\Controllers
+ */
 class SponsorsController extends Controller
 {
-    protected $meetupClient;
+    /**
+     * @var MeetupService
+     */
+    protected $meetupService;
 
-    public function __construct(MeetupKeyAuthClient $meetupKeyAuthClient)
+    /**
+     * SponsorsController constructor.
+     *
+     * @param MeetupService $meetupService
+     */
+    public function __construct(MeetupService $meetupService)
     {
-        $this->meetupClient = $meetupKeyAuthClient::factory([
-            'key' => getenv('MEETUP_API_KEY'),
-        ]);
+        $this->meetupService = $meetupService;
     }
 
-    public function index()
+    /**
+     * Displays all of the groups sponsors
+     *
+     * @return View
+     */
+    public function index(): View
     {
-        $sponsors = $this->meetupClient->getGroups([
-            'group_urlname' => 'PHP-vegas',
-            'fields'  => 'sponsors'
-        ])->getData()[0]['sponsors'];
+        $sponsors = $this->meetupService->groupSponsors();
 
         return view('sponsors', [
             'sponsors' => $sponsors
