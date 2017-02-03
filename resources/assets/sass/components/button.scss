@@ -1,0 +1,14 @@
+.btn {
+  border: 0;
+  border-radius: $radius;
+  transition: all .3s;
+  &.btn-primary {
+    color: $white;
+    font-size: 18px;
+    font-weight: 400;
+    background: $php-purple-dark;
+    &:hover {
+      background: $php-purple-light;
+    }
+  }
+}
