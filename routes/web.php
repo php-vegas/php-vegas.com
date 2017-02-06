@@ -15,6 +15,8 @@
  * Authenticated Routes
  */
 Auth::routes();
+Route::get('/admin', 'AdminController@index')
+    ->name('admin');
 
 /**
  * Front Facing Routes
