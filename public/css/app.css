@@ -8172,6 +8172,11 @@ button.close {
   }
 }
 
+.login-form {
+  max-width: 600px;
+  margin: 60px auto;
+}
+
 footer .social-media {
   padding: 40px 0;
   background: #8892BF;
