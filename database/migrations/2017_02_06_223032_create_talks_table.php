@@ -13,7 +13,15 @@ class CreateTalksTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('talks', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('meetup_name');
+            $table->string('meetup_link');
+            $table->string('slides_link');
+            $table->string('video_link');
+            $table->text('meetup_description');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class CreateTalksTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('talks');
     }
 }
