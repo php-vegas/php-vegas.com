@@ -5,6 +5,11 @@ namespace App\Services;
 use Illuminate\Support\Facades\Redis;
 use DMS\Service\Meetup\MeetupKeyAuthClient;
 
+/**
+ * Class MeetupService
+ *
+ * @package App\Services
+ */
 class MeetupService
 {
     /**
