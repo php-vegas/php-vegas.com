@@ -9,6 +9,7 @@
 
 // Components
 @import "admin/components/navigation";
+@import "admin/components/widget";
 @import "components/button";
 @import "components/forms";
 @import "components/panel";
@@ -31,6 +32,14 @@ body {
     height: 100%;
     background: transparentize($white, .6);
   }
+}
+
+.container {
+  max-width: 900px;
+}
+
+.dashboard {
+  margin: 30px 15px;
 }
 
 #app {

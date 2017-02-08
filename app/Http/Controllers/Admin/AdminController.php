@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Request;
 use App\Http\Controllers\Controller;
+use App\Services\MeetupService;
 
 /**
  * Class AdminController
@@ -11,18 +13,28 @@ use App\Http\Controllers\Controller;
  */
 class AdminController extends Controller
 {
+    private $meetupService;
+
     /**
      * AdminController constructor.
      */
-    function __construct()
+    function __construct(MeetupService $meetupService)
     {
         $this->middleware('auth');
+
+        $this->meetupService = $meetupService;
     }
 
     public function index()
     {
-        return view('admin.dash', [
+        $requestCount = Request::count();
+        $groupDetails = $this->meetupService->groupDetails();
+        $eventDetails = $this->meetupService->latestEvent();
 
+        return view('admin.dash', [
+            'requestCount' => $requestCount,
+            'groupDetails' => $groupDetails,
+            'eventDetails' => $eventDetails,
         ]);
     }
 }
