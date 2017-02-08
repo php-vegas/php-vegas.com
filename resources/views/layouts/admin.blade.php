@@ -23,20 +23,35 @@
         </section>
         <ul class="menu">
             <li class="menu-item">
-                <a href="" class="nav-link">See Topic Requests</a>
+                <a href="" class="nav-link">
+                    <i class="fa fa-slideshare" aria-hidden="true"></i>
+                    See Topic Requests
+                </a>
             </li>
             <li class="menu-item">
-                <a href="" class="nav-link">Add New Talk</a>
+                <a href="" class="nav-link">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    Add New Talk
+                </a>
             </li>
             <li class="menu-item">
-                <a href="" class="nav-link">Clear Redis Cache</a>
+                <a href="" class="nav-link">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                    Clear Redis Cache
+                </a>
             </li>
             <li class="divider menu-item"></li>
             <li class="menu-item">
-                <a href="" class="nav-link">Logout</a>
+                <a href="" class="nav-link">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    Logout
+                </a>
             </li>
             <li class="menu-item">
-                <a href="{{ url('/') }}" class="nav-link">Return To Site</a>
+                <a href="{{ url('/') }}" class="nav-link">
+                    <i class="fa fa-reply" aria-hidden="true"></i>
+                    Return To Site
+                </a>
             </li>
         </ul>
     </nav>

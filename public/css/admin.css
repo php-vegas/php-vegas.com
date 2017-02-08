@@ -7692,9 +7692,8 @@ button.close {
   position: fixed;
   top: 0;
   left: 0;
-  width: 300px;
+  width: 270px;
   height: 100%;
-  border-right: 1px solid #4F5B93;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   background: #FFF;
 }
@@ -7703,7 +7702,6 @@ button.close {
   background: #8892BF;
   color: #FFF;
   padding: 10px;
-  border-bottom: 1px solid #4F5B93;
 }
 
 .navigation .branding span {
@@ -7734,19 +7732,26 @@ button.close {
 }
 
 .navigation .menu .menu-item .nav-link {
-  padding: 10px 15px;
-  color: #4F5B93;
+  padding: 0 15px;
+  color: #000;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
   border-bottom: 1px solid #cbcfe3;
   display: block;
   text-decoration: none;
+  line-height: 50px;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
 .navigation .menu .menu-item .nav-link:hover {
   background: #ECEDEE;
+}
+
+.navigation .menu .menu-item .nav-link i {
+  color: #4F5B93;
+  margin-right: 11px;
+  display: inline-block;
 }
 
 .navigation .menu .menu-item.divider {
@@ -7882,7 +7887,7 @@ footer .copy-right-line p {
  */
 body {
   background: url("/img/content-bg-2.png");
-  padding-left: 300px;
+  padding-left: 270px;
 }
 
 body:before {
