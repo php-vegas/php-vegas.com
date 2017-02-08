@@ -4,13 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Welcome To Fabulous PHP Vegas!</title>
-    <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="/css/app.css" rel="stylesheet">
-    <!-- Scripts -->
+    <link href="/css/admin.css" rel="stylesheet">
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -19,7 +16,30 @@
 </head>
 <body>
 <div id="app">
-
+    <nav class="navigation">
+        <section class="branding">
+            <img src="{{ asset('img/logo.png') }}" alt="PHP Vegas" />
+            <span>PHP Vegas</span>
+        </section>
+        <ul class="menu">
+            <li class="menu-item">
+                <a href="" class="nav-link">See Topic Requests</a>
+            </li>
+            <li class="menu-item">
+                <a href="" class="nav-link">Add New Talk</a>
+            </li>
+            <li class="menu-item">
+                <a href="" class="nav-link">Clear Redis Cache</a>
+            </li>
+            <li class="divider menu-item"></li>
+            <li class="menu-item">
+                <a href="" class="nav-link">Logout</a>
+            </li>
+            <li class="menu-item">
+                <a href="{{ url('/') }}" class="nav-link">Return To Site</a>
+            </li>
+        </ul>
+    </nav>
 
     @yield('content')
 
