@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Request;
 use App\Http\Controllers\Controller;
 use App\Services\MeetupService;
+use Illuminate\View\View;
 
 /**
  * Class AdminController
@@ -13,10 +14,15 @@ use App\Services\MeetupService;
  */
 class AdminController extends Controller
 {
+    /**
+     * @var MeetupService
+     */
     private $meetupService;
 
     /**
      * AdminController constructor.
+     *
+     * @param MeetupService $meetupService
      */
     function __construct(MeetupService $meetupService)
     {
@@ -25,7 +31,12 @@ class AdminController extends Controller
         $this->meetupService = $meetupService;
     }
 
-    public function index()
+    /**
+     * Displays the administration dashboard
+     *
+     * @return View
+     */
+    public function index(): View
     {
         $requestCount = Request::count();
         $groupDetails = $this->meetupService->groupDetails();

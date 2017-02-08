@@ -95,11 +95,18 @@ class MeetupService
         return unserialize($sponsors);
     }
 
+    /**
+     * Returns the group details
+     *
+     *   ** Not Cached **
+     *
+     * @return array
+     */
     public function groupDetails(): array
     {
         return $sponsors = $this->client->getGroups([
             'group_urlname' => 'PHP-vegas',
-            'fields'  => 'sponsors'
+            'fields'        => 'sponsors'
         ])->getData()[0];
     }
 }
