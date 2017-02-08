@@ -15,7 +15,7 @@
  * Authenticated Routes
  */
 Auth::routes();
-Route::get('/admin', 'AdminController@index')
+Route::get('/admin', 'Admin\AdminController@index')
     ->name('admin');
 
 /**
