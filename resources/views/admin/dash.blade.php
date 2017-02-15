@@ -44,6 +44,15 @@
                     </section>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="well">
+                        <h3 class="title">
+                            Latest Topic Requests
+                        </h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
