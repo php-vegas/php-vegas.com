@@ -7758,6 +7758,22 @@ button.close {
   border-bottom: 1px solid #cbcfe3;
 }
 
+.well.confirmation {
+  background: #FFF;
+  border-top: 3px solid #4F5B93;
+  border-radius: 0 0 4px 4px;
+}
+
+.well.confirmation p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.well.confirmation p i {
+  color: #8892BF;
+  margin: 0 10px 0 0;
+}
+
 .widget {
   background: #FFF;
   border-radius: 4px;

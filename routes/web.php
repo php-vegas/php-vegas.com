@@ -17,6 +17,7 @@
 Auth::routes();
 Route::get('/admin', 'Admin\AdminController@index')
     ->name('admin');
+Route::get('/admin/flush-redis', 'Admin\RedisController@index')->name('flush-redis');
 
 /**
  * Front Facing Routes

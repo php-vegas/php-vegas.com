@@ -3,6 +3,20 @@
 @section('content')
 
     <section class="dashboard">
+        @if(!is_null($confirmation))
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="well confirmation">
+                            <p>
+                                <i class="fa fa-check"></i>
+                                {{ $confirmation }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
         <div class="container">
             <div class="row">
                 <div class="col-md-4">

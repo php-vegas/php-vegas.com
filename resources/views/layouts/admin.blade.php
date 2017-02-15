@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li class="menu-item">
-                <a href="" class="nav-link">
+                <a href="{{ url('/admin/flush-redis') }}" class="nav-link">
                     <i class="fa fa-refresh" aria-hidden="true"></i>
                     Clear Redis Cache
                 </a>
