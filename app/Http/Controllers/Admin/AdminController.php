@@ -40,16 +40,18 @@ class AdminController extends Controller
      */
     public function index(HTTPRequest $request): View
     {
-        $flashMessage = $request->session()->get('confirmation', null);
-        $requestCount = Request::count();
-        $groupDetails = $this->meetupService->groupDetails();
-        $eventDetails = $this->meetupService->latestEvent();
+        $flashMessage  = $request->session()->get('confirmation', null);
+        $requestCount  = Request::count();
+        $topicRequests = Request::all();
+        $groupDetails  = $this->meetupService->groupDetails();
+        $eventDetails  = $this->meetupService->latestEvent();
 
         return view('admin.dash', [
-            'confirmation' => $flashMessage,
-            'requestCount' => $requestCount,
-            'groupDetails' => $groupDetails,
-            'eventDetails' => $eventDetails,
+            'confirmation'  => $flashMessage,
+            'requestCount'  => $requestCount,
+            'groupDetails'  => $groupDetails,
+            'eventDetails'  => $eventDetails,
+            'topicRequests' => $topicRequests,
         ]);
     }
 }

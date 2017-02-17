@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Request as TopicReq;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Mail\TopicRequested;
@@ -33,6 +34,16 @@ class TopicRequestsController extends Controller
      */
     public function insert(Request $request): RedirectResponse
     {
+        $topicReq = new TopicReq();
+
+        $topicReq->first_name = $request->fname;
+        $topicReq->last_name = $request->lname;
+        $topicReq->email_address = $request->email;
+        $topicReq->phone_number = $request->phone;
+        $topicReq->topic_request = $request->topic_request;
+
+        $topicReq->save();
+
         Mail::to(getenv('MAIL_TO'))->send(new TopicRequested($request));
 
         return redirect('/meetup-events/request-topic/thanks');

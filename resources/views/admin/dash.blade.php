@@ -50,6 +50,18 @@
                         <h3 class="title">
                             Latest Topic Requests
                         </h3>
+                        <ul class="requests">
+                            @foreach($topicRequests as $request)
+                                <li class="request">
+                                    <div class="name">{{ $request->first_name }} {{ $request->last_name }}</div>
+                                    <div class="topic">
+                                        <p>
+                                            {{ $request->topic_request }}
+                                        </p>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>

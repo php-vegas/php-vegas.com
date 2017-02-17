@@ -23,9 +23,9 @@
         </section>
         <ul class="menu">
             <li class="menu-item">
-                <a href="" class="nav-link">
+                <a href="{{ url('/admin/export-requests') }}" class="nav-link">
                     <i class="fa fa-slideshare" aria-hidden="true"></i>
-                    See Topic Requests
+                    Export Topic Requests
                 </a>
             </li>
             <li class="menu-item">

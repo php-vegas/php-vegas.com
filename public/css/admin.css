@@ -7688,6 +7688,42 @@ button.close {
   }
 }
 
+.requests {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.requests .request {
+  padding: 10px;
+  margin: 0;
+  border-radius: 4px;
+}
+
+.requests .request .name {
+  font-weight: bold;
+  color: #000;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.requests .request .topic {
+  border-top: 1px solid #CBCBCB;
+  padding: 10px 0 0;
+  margin: 10px 0 0;
+}
+
+.requests .request .topic p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #4F5B93;
+}
+
+.requests .request:nth-child(odd) {
+  background: #ECEDEE;
+}
+
 .navigation {
   position: fixed;
   top: 0;
