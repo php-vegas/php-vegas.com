@@ -15,12 +15,15 @@
  * Authenticated Routes
  */
 Auth::routes();
+
 Route::get('/admin', 'Admin\AdminController@index')
     ->name('admin');
 Route::get('/admin/flush-redis', 'Admin\RedisController@index')
     ->name('flush-redis');
 Route::get('/admin/export-requests', 'Admin\TopicRequestsController@export')
     ->name('export-requests');
+Route::get('/admin/past-talks', 'Admin\PastTalksController@index')
+    ->name('add-past-talk');
 
 /**
  * Front Facing Routes

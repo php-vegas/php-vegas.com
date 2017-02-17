@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Request;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 /**
  * Class TopicRequestsController
@@ -21,13 +22,15 @@ class TopicRequestsController extends Controller
     }
 
     /**
-     * Displays the administration dashboard
+     * Exports the topic requests from the database
+     *
+     * @return StreamedResponse
      */
-    public function export()
+    public function export(): StreamedResponse
     {
-        $requests = Request::all();
+        $requests   = Request::all();
         $streamFunc = function () use ($requests) {
-            $handle   = fopen('php://output', 'w');
+            $handle = fopen('php://output', 'w');
 
             fputcsv($handle, [
                 'First Name',

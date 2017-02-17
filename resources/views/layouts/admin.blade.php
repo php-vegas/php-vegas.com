@@ -29,7 +29,7 @@
                 </a>
             </li>
             <li class="menu-item">
-                <a href="" class="nav-link">
+                <a href="/admin/past-talks" class="nav-link">
                     <i class="fa fa-plus" aria-hidden="true"></i>
                     Add New Talk
                 </a>

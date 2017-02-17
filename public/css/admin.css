@@ -7688,6 +7688,18 @@ button.close {
   }
 }
 
+.add-talk-form {
+  margin-top: 30px;
+}
+
+.add-talk-form textarea {
+  max-height: 150px;
+}
+
+.add-talk-form .btn {
+  width: 100%;
+}
+
 .requests {
   margin: 0;
   padding: 0;
