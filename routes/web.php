@@ -24,6 +24,10 @@ Route::get('/admin/export-requests', 'Admin\TopicRequestsController@export')
     ->name('export-requests');
 Route::get('/admin/past-talks', 'Admin\PastTalksController@index')
     ->name('add-past-talk');
+Route::post('/admin/past-talks/insert', 'Admin\PastTalksController@insert')
+    ->name('insert-past-talk');
+Route::get('/admin/past-talks/delete/{id}', 'Admin\PastTalksController@delete')
+    ->name('insert-past-talk');
 
 /**
  * Front Facing Routes

@@ -1,9 +1,31 @@
 .add-talk-form {
   margin-top: 30px;
+  label {
+    margin-top: 10px;
+  }
   textarea {
-    max-height: 150px;
+    max-height: 125px;
   }
   .btn {
     width: 100%;
+  }
+  .header-row {
+    background: $darker-white;
+    padding: 5px 0;
+    strong {
+      color: $php-purple-dark
+    }
+  }
+  .meetup-row {
+    padding: 5px 0;
+    a {
+      color: $php-purple-light;
+    }
+    div {
+      color: $black;
+    }
+    &:nth-child(odd) {
+      background: $off-white;
+    }
   }
 }

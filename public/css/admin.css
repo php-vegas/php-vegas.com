@@ -7692,12 +7692,41 @@ button.close {
   margin-top: 30px;
 }
 
+.add-talk-form label {
+  margin-top: 10px;
+}
+
 .add-talk-form textarea {
-  max-height: 150px;
+  max-height: 125px;
 }
 
 .add-talk-form .btn {
   width: 100%;
+}
+
+.add-talk-form .header-row {
+  background: #CBCBCB;
+  padding: 5px 0;
+}
+
+.add-talk-form .header-row strong {
+  color: #4F5B93;
+}
+
+.add-talk-form .meetup-row {
+  padding: 5px 0;
+}
+
+.add-talk-form .meetup-row a {
+  color: #8892BF;
+}
+
+.add-talk-form .meetup-row div {
+  color: #000;
+}
+
+.add-talk-form .meetup-row:nth-child(odd) {
+  background: #ECEDEE;
 }
 
 .requests {
@@ -8006,7 +8035,7 @@ body:before {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 990px;
 }
 
 .dashboard {
