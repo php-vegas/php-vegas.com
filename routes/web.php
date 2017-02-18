@@ -20,14 +20,20 @@ Route::get('/admin', 'Admin\AdminController@index')
     ->name('admin');
 Route::get('/admin/flush-redis', 'Admin\RedisController@index')
     ->name('flush-redis');
+
 Route::get('/admin/export-requests', 'Admin\TopicRequestsController@export')
     ->name('export-requests');
+
 Route::get('/admin/past-talks', 'Admin\PastTalksController@index')
     ->name('add-past-talk');
+Route::get('/admin/past-talks/delete/{id}', 'Admin\PastTalksController@delete')
+    ->name('delete-past-talk');
+Route::get('/admin/past-talks/edit/{id}', 'Admin\PastTalksController@edit')
+    ->name('edit-past-talk');
 Route::post('/admin/past-talks/insert', 'Admin\PastTalksController@insert')
     ->name('insert-past-talk');
-Route::get('/admin/past-talks/delete/{id}', 'Admin\PastTalksController@delete')
-    ->name('insert-past-talk');
+Route::post('/admin/past-talks/update/{id}', 'Admin\PastTalksController@update')
+    ->name('update-past-talk');
 
 /**
  * Front Facing Routes
