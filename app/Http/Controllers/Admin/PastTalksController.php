@@ -59,6 +59,43 @@ class PastTalksController extends Controller
     }
 
     /**
+     * Insets the previous talk into the database.
+     *
+     * @param int $id
+     * @return View
+     */
+    public function edit(int $id): View
+    {
+        $talk = Talk::find($id);
+
+        return view('admin.editTalk', [
+            'talk' => $talk,
+        ]);
+    }
+
+    /**
+     * Insets the previous talk into the database.
+     *
+     * @param Request $request
+     * @param int $id
+     * @return RedirectResponse
+     */
+    public function update(Request $request, int $id): RedirectResponse
+    {
+        $talk = Talk::find($id);
+
+        $talk->meetup_name        = $request->meetup_name;
+        $talk->meetup_link        = $request->meetup_link;
+        $talk->slides_link        = $request->slides_link;
+        $talk->video_link         = $request->video_link;
+        $talk->meetup_description = $request->meetup_description;
+
+        $talk->save();
+
+        return redirect('/admin/past-talks');
+    }
+
+    /**
      * Deletes the selected row.
      *
      * @param int $id
