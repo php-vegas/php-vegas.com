@@ -1,0 +1,59 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100%;
+  box-shadow: 0 0 20px transparentize($black, .6);
+  background: $white;
+  .branding {
+    background: $php-purple-light;
+    color: $white;
+    padding: 10px;
+    span {
+      line-height: 35px;
+      font-weight: bold;
+      font-size: 22px;
+    }
+    img {
+      max-height: 35px;
+      margin: 0 15px 0 0;
+      display: block;
+      float: left;
+    }
+  }
+  .menu {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    .menu-item{
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      .nav-link {
+        padding: 0 15px;
+        color: $black;
+        font-weight: 300;
+        font-size: 18px;
+        border-bottom: 1px solid $php-purple-faint;
+        display: block;
+        text-decoration: none;
+        line-height: 50px;
+        transition: all .3s;
+        &:hover {
+          background: $off-white;
+        }
+        i {
+          color: $php-purple-dark;
+          margin-right: 11px;
+          display: inline-block;
+        }
+      }
+      &.divider {
+        padding: 15px 0;
+        border-bottom: 1px solid $php-purple-faint;
+      }
+    }
+  }
+}

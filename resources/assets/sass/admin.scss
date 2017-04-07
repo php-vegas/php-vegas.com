@@ -8,16 +8,15 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Components
-@import "components/navigation";
-@import "components/hero";
+@import "admin/components/addTalks";
+@import "admin/components/requests";
+@import "admin/components/navigation";
+@import "admin/components/confirmation";
+@import "admin/components/well";
+@import "admin/components/widget";
 @import "components/button";
-@import "components/pageTitle";
-@import "components/events";
 @import "components/forms";
 @import "components/panel";
-@import "components/cta";
-@import "components/sponsors";
-@import "components/contact";
 @import "components/loginForm";
 @import "components/footer";
 
@@ -26,6 +25,7 @@
  */
 body {
   background: url('/img/content-bg-2.png');
+  padding-left: 270px;
   &:before {
     content: " ";
     position: fixed;
@@ -36,6 +36,14 @@ body {
     height: 100%;
     background: transparentize($white, .6);
   }
+}
+
+.container {
+  max-width: 990px;
+}
+
+.dashboard {
+  margin: 30px 15px;
 }
 
 #app {

@@ -1,0 +1,14 @@
+.well {
+  background: $white;
+  padding: 15px;
+  border-top: 3px solid $php-purple-dark;
+  .title {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $black;
+    border-bottom: 1px solid $off-white;
+    margin: 0 0 15px;
+    padding: 0 0 15px;
+  }
+}

@@ -5,6 +5,11 @@ namespace App\Services;
 use Illuminate\Support\Facades\Redis;
 use DMS\Service\Meetup\MeetupKeyAuthClient;
 
+/**
+ * Class MeetupService
+ *
+ * @package App\Services
+ */
 class MeetupService
 {
     /**
@@ -41,11 +46,9 @@ class MeetupService
         $event = Redis::get('latest-meetup-event');
 
         if (is_null($event)) {
-            $event = $this->client->getEvents([
-                'group_urlname' => 'PHP-vegas',
-            ])->getData()[0];
-
+            $event = $this->latestEvents()[0];
             $event = serialize($event);
+
             Redis::set('latest-meetup-event', $event);
         }
 
@@ -65,8 +68,8 @@ class MeetupService
             $events = $this->client->getEvents([
                 'group_urlname' => 'PHP-vegas',
             ])->getData();
-
             $events = serialize($events);
+
             Redis::set('all-meetup-events', $events);
         }
 
@@ -83,15 +86,27 @@ class MeetupService
         $sponsors = Redis::get('meetup-sponsors');
 
         if (is_null($sponsors)) {
-            $sponsors = $this->client->getGroups([
-                'group_urlname' => 'PHP-vegas',
-                'fields'  => 'sponsors'
-            ])->getData()[0]['sponsors'];
-
+            $sponsors = $this->groupDetails()['sponsors'];
             $sponsors = serialize($sponsors);
+
             Redis::set('meetup-sponsors', $sponsors);
         }
 
         return unserialize($sponsors);
+    }
+
+    /**
+     * Returns the group details
+     *
+     *   ** Not Cached **
+     *
+     * @return array
+     */
+    public function groupDetails(): array
+    {
+        return $sponsors = $this->client->getGroups([
+            'group_urlname' => 'PHP-vegas',
+            'fields'        => 'sponsors'
+        ])->getData()[0];
     }
 }

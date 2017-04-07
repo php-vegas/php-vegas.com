@@ -45,9 +45,9 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-12 co-sm-12">
-                                        <label for="request">Your Topic Request *</label>
-                                        <textarea name="request" id="request" cols="30" rows="10"
-                                                  class="request form-control"></textarea>
+                                        <label for="topic_request">Your Topic Request *</label>
+                                        <textarea name="topic_request" id="topic_request" cols="30" rows="10"
+                                                  class="topic_request form-control"></textarea>
                                     </div>
                                 </div>
                                 <hr>

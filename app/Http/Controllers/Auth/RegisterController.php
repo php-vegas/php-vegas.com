@@ -4,22 +4,21 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+/**
+ * Class RegisterController
+ *
+ * @package App\Http\Controllers\Auth
+ */
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
+    /**
+     * @var RegistersUsers trait
+     */
     use RegistersUsers;
 
     /**
@@ -27,16 +26,34 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * RegisterController constructor.
      */
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    /**
+     * Disables the registration form
+     *
+     * @return RedirectResponse
+     */
+    public function showRegistrationForm(): RedirectResponse
+    {
+        return redirect('/');
+    }
+
+    /**
+     * Disables Registration
+     *
+     * @return RedirectResponse
+     */
+    public function register(): RedirectResponse
+    {
+        return redirect('/');
     }
 
     /**

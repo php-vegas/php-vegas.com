@@ -1,0 +1,30 @@
+.requests {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  .request {
+    padding: 10px;
+    margin: 0;
+    border-radius: $radius;
+    .name {
+      font-weight: bold;
+      color: $black;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+    .topic {
+      border-top: 1px solid $darker-white;
+      padding: 10px 0 0;
+      margin: 10px 0 0;
+      p {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        color: $php-purple-dark;
+      }
+    }
+    &:nth-child(odd) {
+      background: $off-white;
+    }
+  }
+}
