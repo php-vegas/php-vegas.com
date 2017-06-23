@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\Redis;
 use DMS\Service\Meetup\MeetupKeyAuthClient;
+use Illuminate\Cache\Repository;
 
 /**
  * Class MeetupService
@@ -18,7 +18,7 @@ class MeetupService
     protected $client;
 
     /**
-     * @var Redis
+     * @var Repository
      */
     protected $redis;
 
@@ -26,9 +26,9 @@ class MeetupService
      * MeetupService constructor.
      *
      * @param MeetupKeyAuthClient $meetupKeyAuthClient
-     * @param Redis $redis
+     * @param Repository $redis
      */
-    public function __construct(MeetupKeyAuthClient $meetupKeyAuthClient, Redis $redis)
+    public function __construct(MeetupKeyAuthClient $meetupKeyAuthClient, Repository $redis)
     {
         $this->redis  = $redis;
         $this->client = $meetupKeyAuthClient::factory([
@@ -43,13 +43,14 @@ class MeetupService
      */
     public function latestEvent(): array
     {
-        $event = Redis::get('latest-meetup-event');
+        $event = $this->redis->get('latest-meetup-event');
 
         if (is_null($event)) {
-            $event = $this->latestEvents()[0];
-            $event = serialize($event);
+            $events = $this->latestEvents();
+            $event  = current($events);
+            $event  = serialize($event);
 
-            Redis::set('latest-meetup-event', $event);
+            $this->redis->put('latest-meetup-event', $event, 5);
         }
 
         return unserialize($event);
@@ -62,7 +63,7 @@ class MeetupService
      */
     public function latestEvents(): array
     {
-        $events = Redis::get('all-meetup-events');
+        $events = $this->redis->get('all-meetup-events');
 
         if (is_null($events)) {
             $events = $this->client->getEvents([
@@ -70,7 +71,7 @@ class MeetupService
             ])->getData();
             $events = serialize($events);
 
-            Redis::set('all-meetup-events', $events);
+            $this->redis->put('all-meetup-events', $events, 5);
         }
 
         return unserialize($events);
@@ -83,13 +84,13 @@ class MeetupService
      */
     public function groupSponsors(): array
     {
-        $sponsors = Redis::get('meetup-sponsors');
+        $sponsors = $this->redis->get('meetup-sponsors');
 
         if (is_null($sponsors)) {
             $sponsors = $this->groupDetails()['sponsors'];
             $sponsors = serialize($sponsors);
 
-            Redis::set('meetup-sponsors', $sponsors);
+            $this->redis->put('meetup-sponsors', $sponsors, 5);
         }
 
         return unserialize($sponsors);
@@ -104,9 +105,11 @@ class MeetupService
      */
     public function groupDetails(): array
     {
-        return $sponsors = $this->client->getGroups([
+        $data = $this->client->getGroups([
             'group_urlname' => 'PHP-vegas',
             'fields'        => 'sponsors'
-        ])->getData()[0];
+        ])->getData();
+
+        return current($data);
     }
 }
