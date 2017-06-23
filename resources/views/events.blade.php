@@ -24,9 +24,7 @@
                                 <div class="heading-meta">
                                     {{ $event['venue']['name'] }} //
                                     {{ $event['venue']['address_1'] }}
-                                    {{ $event['venue']['city'] }},
-                                    {{ $event['venue']['state'] }}
-                                    {{ $event['venue']['zip'] }}
+                                    {{ $event['venue']['city'] }}
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 col-sm-12">
@@ -57,9 +55,7 @@
                                 <div class="heading-meta">
                                     {{ $event['venue']['name'] }} //
                                     {{ $event['venue']['address_1'] }}
-                                    {{ $event['venue']['city'] }},
-                                    {{ $event['venue']['state'] }}
-                                    {{ $event['venue']['zip'] }}
+                                    {{ $event['venue']['city'] }}
                                 </div>
                                 <h3 class="event-name">
                                     {{ $event['name'] }}
