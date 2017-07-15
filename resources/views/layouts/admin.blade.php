@@ -42,10 +42,12 @@
             </li>
             <li class="divider menu-item"></li>
             <li class="menu-item">
-                <a href="" class="nav-link">
-                    <i class="fa fa-sign-out" aria-hidden="true"></i>
-                    Logout
-                </a>
+                <form method="post" action="/logout">
+                    <button class="nav-link" type="submit">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        Logout
+                    </button>
+                </form>
             </li>
             <li class="menu-item">
                 <a href="{{ url('/') }}" class="nav-link">
