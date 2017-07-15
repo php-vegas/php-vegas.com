@@ -20,6 +20,15 @@
                 <div class="col-md-8 col-sm-12 col-md-offset-2">
                     <div class="panel">
                         <h3 class="panel-heading">Submit Request Below</h3>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <div class="panel-body">
                             <form action="{{ route('insert-topic-request') }}" method="post">
                                 {{ csrf_field() }}
@@ -35,7 +44,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-6 col-sm-12">
-                                        <label for="phone">Phone Number *</label>
+                                        <label for="phone">Phone Number</label>
                                         <input type="text" name="phone" class="form-control phone" id="phone" />
                                     </div>
                                     <div class="col-md-6 col-sm-12">

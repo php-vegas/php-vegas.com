@@ -62,11 +62,11 @@ class TopicRequestsController extends Controller
      */
     public function insert(Request $request): RedirectResponse
     {
-        $this->validatorFactory->make($request->all(), [
+        $this->validate($request, [
             'fname'         => 'required|string',
             'lname'         => 'required|string',
             'email'         => 'required|string',
-            'phone'         => 'required|string',
+            'phone'         => 'string',
             'topic_request' => 'required',
             'hpc'           => 'size:0|string'
         ]);
