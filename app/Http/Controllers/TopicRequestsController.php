@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Request as TopicReq;
+use App\Request as TopicRequest;
 use Illuminate\Mail\Mailer;
-use Illuminate\Validation\Factory as ValidatorFactory;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Mail\TopicRequested;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\RedirectResponse;
 
 /**
@@ -19,27 +17,25 @@ use Illuminate\Http\RedirectResponse;
 class TopicRequestsController extends Controller
 {
     /**
-     * @var ValidatorFactory
+     * @var Mailer
      */
-    private $validatorFactory;
-
     private $mailer;
 
+    /**
+     * @var TopicRequest
+     */
     private $topicRequest;
 
     /**
      * TopicRequestsController constructor.
      *
-     * @param ValidatorFactory $validatorFactory
      * @param Mailer $mailer
-     * @param TopicReq $topicRequest
+     * @param TopicRequest $topicRequest
      */
     public function __construct(
-        ValidatorFactory $validatorFactory,
         Mailer $mailer,
-        TopicReq $topicRequest
+        TopicRequest $topicRequest
     ) {
-        $this->validatorFactory = $validatorFactory;
         $this->mailer = $mailer;
         $this->topicRequest = $topicRequest;
     }
@@ -68,7 +64,7 @@ class TopicRequestsController extends Controller
             'email'         => 'required|string',
             'phone'         => 'string',
             'topic_request' => 'required',
-            'hpc'           => 'size:0|string'
+            'hpc'           => 'accepted'
         ]);
 
         $this->topicRequest->first_name    = $request->fname;
@@ -81,7 +77,9 @@ class TopicRequestsController extends Controller
 
         $this->mailer
             ->to(getenv('MAIL_TO'))
-            ->send(new TopicRequested($request));
+            ->send(
+                new TopicRequested($request)
+            );
 
         return redirect('/meetup-events/request-topic/thanks');
     }

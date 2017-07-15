@@ -60,7 +60,7 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <input type="text" name="hpc" style="position:absolute; top: -1000000000px" />
+                                <input type="text" name="hpc" title="hpc" style="position:absolute; top: -10000px" value="1" />
                                 <div class="form-group row">
                                     <div class="col-md-12 col-sm-12">
                                         <input type="submit" class="submit btn btn-primary" value="Send Request"
