@@ -16,6 +16,10 @@
  */
 Auth::routes();
 
+Route::get('/logout', function () {
+    Auth::logout();
+});
+
 Route::get('/admin', 'Admin\AdminController@index')
     ->name('admin');
 Route::get('/admin/flush-redis', 'Admin\RedisController@index')
