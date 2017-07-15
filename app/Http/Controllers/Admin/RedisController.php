@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Cache\Repository;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redis;
 
 /**
  * Class RedisController
@@ -14,14 +14,19 @@ use Illuminate\Support\Facades\Redis;
  */
 class RedisController extends Controller
 {
+    private $redis;
+
     /**
      * AdminController constructor.
      *
      * @internal param MeetupService $meetupService
+     * @param Repository $redis
      */
-    function __construct()
+    function __construct(Repository $redis)
     {
         $this->middleware('auth');
+
+        $this->redis = $redis;
     }
 
     /**
@@ -32,7 +37,7 @@ class RedisController extends Controller
      */
     public function index(Request $request): RedirectResponse
     {
-        Redis::flushall();
+        $this->redis->tags('phpvegas')->flush();
         $request->session()->flash('confirmation', 'Redis Cache Cleared Successfully');
 
         return redirect('/admin');

@@ -43,14 +43,14 @@ class MeetupService
      */
     public function latestEvent(): array
     {
-        $event = $this->redis->get('latest-meetup-event');
+        $event = $this->redis->tags('phpvegas')->get('latest-meetup-event');
 
         if (is_null($event)) {
             $events = $this->latestEvents();
             $event  = current($events);
             $event  = serialize($event);
 
-            $this->redis->put('latest-meetup-event', $event, 5);
+            $this->redis->tags('phpvegas')->put('latest-meetup-event', $event, 5);
         }
 
         return unserialize($event);
@@ -63,7 +63,7 @@ class MeetupService
      */
     public function latestEvents(): array
     {
-        $events = $this->redis->get('all-meetup-events');
+        $events = $this->redis->tags('phpvegas')->get('all-meetup-events');
 
         if (is_null($events)) {
             $events = $this->client->getEvents([
@@ -71,7 +71,7 @@ class MeetupService
             ])->getData();
             $events = serialize($events);
 
-            $this->redis->put('all-meetup-events', $events, 5);
+            $this->redis->tags('phpvegas')->put('all-meetup-events', $events, 5);
         }
 
         return unserialize($events);
@@ -84,13 +84,13 @@ class MeetupService
      */
     public function groupSponsors(): array
     {
-        $sponsors = $this->redis->get('meetup-sponsors');
+        $sponsors = $this->redis->tags('phpvegas')->get('meetup-sponsors');
 
         if (is_null($sponsors)) {
             $sponsors = $this->groupDetails()['sponsors'];
             $sponsors = serialize($sponsors);
 
-            $this->redis->put('meetup-sponsors', $sponsors, 5);
+            $this->redis->tags('phpvegas')->put('meetup-sponsors', $sponsors, 5);
         }
 
         return unserialize($sponsors);

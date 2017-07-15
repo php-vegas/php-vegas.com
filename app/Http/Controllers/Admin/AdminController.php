@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use \Illuminate\Http\Request as HTTPRequest;
-use App\Request;
+use \Illuminate\Http\Request;
+use App\Request as TopicRequest;
 use App\Http\Controllers\Controller;
 use App\Services\MeetupService;
 use Illuminate\View\View;
@@ -21,28 +21,37 @@ class AdminController extends Controller
     private $meetupService;
 
     /**
+     * @var TopicRequest
+     */
+    private $topicRequest;
+
+    /**
      * AdminController constructor.
      *
      * @param MeetupService $meetupService
+     * @param TopicRequest $topicRequest
      */
-    function __construct(MeetupService $meetupService)
-    {
+    function __construct(
+        MeetupService $meetupService,
+        TopicRequest $topicRequest
+    ) {
         $this->middleware('auth');
 
         $this->meetupService = $meetupService;
+        $this->topicRequest = $topicRequest;
     }
 
     /**
      * Displays the administration dashboard
      *
-     * @param Request|HTTPRequest $request
+     * @param Request $request
      * @return View
      */
-    public function index(HTTPRequest $request): View
+    public function index(Request $request): View
     {
         $flashMessage  = $request->session()->get('confirmation', null);
-        $requestCount  = Request::count();
-        $topicRequests = Request::all();
+        $topicRequests = $this->topicRequest->all();
+        $requestCount  = $topicRequests->count();
         $groupDetails  = $this->meetupService->groupDetails();
         $eventDetails  = $this->meetupService->latestEvent();
 

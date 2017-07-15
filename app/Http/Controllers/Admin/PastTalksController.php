@@ -16,11 +16,20 @@ use Illuminate\View\View;
 class PastTalksController extends Controller
 {
     /**
-     * PastTalksController constructor.
+     * @var Talk
      */
-    function __construct()
+    private $talk;
+
+    /**
+     * PastTalksController constructor.
+     *
+     * @param Talk $talk
+     */
+    function __construct(Talk $talk)
     {
         $this->middleware('auth');
+
+        $this->talk = $talk;
     }
 
     /**
@@ -30,7 +39,7 @@ class PastTalksController extends Controller
      */
     public function index(): View
     {
-        $talks = Talk::all();
+        $talks = $this->talk->all();
 
         return view('admin.talks', [
             'talks' => $talks,
@@ -45,15 +54,13 @@ class PastTalksController extends Controller
      */
     public function insert(Request $request): RedirectResponse
     {
-        $talk = new Talk();
+        $this->talk->meetup_name        = $request->meetup_name;
+        $this->talk->meetup_link        = $request->meetup_link;
+        $this->talk->slides_link        = $request->slides_link;
+        $this->talk->video_link         = $request->video_link;
+        $this->talk->meetup_description = $request->meetup_description;
 
-        $talk->meetup_name        = $request->meetup_name;
-        $talk->meetup_link        = $request->meetup_link;
-        $talk->slides_link        = $request->slides_link;
-        $talk->video_link         = $request->video_link;
-        $talk->meetup_description = $request->meetup_description;
-
-        $talk->save();
+        $this->talk->save();
 
         return redirect('/admin/past-talks');
     }
@@ -66,7 +73,7 @@ class PastTalksController extends Controller
      */
     public function edit(int $id): View
     {
-        $talk = Talk::find($id);
+        $talk = $this->talk->find($id);
 
         return view('admin.editTalk', [
             'talk' => $talk,
@@ -82,7 +89,7 @@ class PastTalksController extends Controller
      */
     public function update(Request $request, int $id): RedirectResponse
     {
-        $talk = Talk::find($id);
+        $talk = $this->talk->find($id);
 
         $talk->meetup_name        = $request->meetup_name;
         $talk->meetup_link        = $request->meetup_link;
@@ -103,7 +110,7 @@ class PastTalksController extends Controller
      */
     public function delete(int $id): RedirectResponse
     {
-        Talk::destroy($id);
+        $this->talk->destroy($id);
 
         return redirect('/admin/past-talks');
     }
