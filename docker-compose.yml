@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/phpvegas
+      - ./site.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - phpvegas-network
+  php:
+    build: ./
+    volumes:
+      - ./:/phpvegas
+    networks:
+      - phpvegas-network
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    networks:
+      - phpvegas-network
+    environment:
+      MYSQL_ROOT_PASSWORD: your_db_password
+    volumes:
+      - /Docker/mysql-data:/var/lib/mysql
+
+networks:
+  phpvegas-network:
+    driver: bridge

@@ -51,6 +51,7 @@
                                     </div>
                                 </div>
                                 <hr>
+                                <input type="text" name="hpc" style="position:absolute; top: -1000000000px" />
                                 <div class="form-group row">
                                     <div class="col-md-12 col-sm-12">
                                         <input type="submit" class="submit btn btn-primary" value="Send Request"

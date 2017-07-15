@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Request as TopicReq;
+use Illuminate\Mail\Mailer;
+use Illuminate\Validation\Factory as ValidatorFactory;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Mail\TopicRequested;
@@ -16,6 +18,32 @@ use Illuminate\Http\RedirectResponse;
  */
 class TopicRequestsController extends Controller
 {
+    /**
+     * @var ValidatorFactory
+     */
+    private $validatorFactory;
+
+    private $mailer;
+
+    private $topicRequest;
+
+    /**
+     * TopicRequestsController constructor.
+     *
+     * @param ValidatorFactory $validatorFactory
+     * @param Mailer $mailer
+     * @param TopicReq $topicRequest
+     */
+    public function __construct(
+        ValidatorFactory $validatorFactory,
+        Mailer $mailer,
+        TopicReq $topicRequest
+    ) {
+        $this->validatorFactory = $validatorFactory;
+        $this->mailer = $mailer;
+        $this->topicRequest = $topicRequest;
+    }
+
     /**
      * Returns the view for the request form.
      *
@@ -34,17 +62,26 @@ class TopicRequestsController extends Controller
      */
     public function insert(Request $request): RedirectResponse
     {
-        $topicReq = new TopicReq();
+        $this->validatorFactory->make($request->all(), [
+            'fname'         => 'required|string',
+            'lname'         => 'required|string',
+            'email'         => 'required|string',
+            'phone'         => 'required|string',
+            'topic_request' => 'required',
+            'hpc'           => 'size:0|string'
+        ]);
 
-        $topicReq->first_name = $request->fname;
-        $topicReq->last_name = $request->lname;
-        $topicReq->email_address = $request->email;
-        $topicReq->phone_number = $request->phone;
-        $topicReq->topic_request = $request->topic_request;
+        $this->topicRequest->first_name    = $request->fname;
+        $this->topicRequest->last_name     = $request->lname;
+        $this->topicRequest->email_address = $request->email;
+        $this->topicRequest->phone_number  = $request->phone;
+        $this->topicRequest->topic_request = $request->topic_request;
 
-        $topicReq->save();
+        $this->topicRequest->save();
 
-        Mail::to(getenv('MAIL_TO'))->send(new TopicRequested($request));
+        $this->mailer
+            ->to(getenv('MAIL_TO'))
+            ->send(new TopicRequested($request));
 
         return redirect('/meetup-events/request-topic/thanks');
     }
