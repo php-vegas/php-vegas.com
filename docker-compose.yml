@@ -41,7 +41,7 @@ services:
       MYSQL_USER: phpvegas
       MYSQL_PASSWORD: rocks
     volumes:
-      - ./mysql-data:/var/lib/mysql
+      - /Docker/mysql-data:/var/lib/mysql
 
 networks:
   phpvegas-network:
