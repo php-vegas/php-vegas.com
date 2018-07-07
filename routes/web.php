@@ -62,3 +62,5 @@ Route::post('/meetup-events/request-topic/insert', 'TopicRequestsController@inse
     ->name('insert-topic-request');
 Route::get('/contact', 'ContactController@index')
     ->name('contact');
+Route::get('/elephpant', 'ElephpantController@index')
+    ->name('elephpant');
