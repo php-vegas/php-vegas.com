@@ -18,12 +18,13 @@ RUN \
     unzip               \
     libc6
 
+RUN pecl install mcrypt-1.0.1
+
 RUN \
   docker-php-ext-install \
     soap      \
     xml       \
     intl      \
-    mcrypt    \
     mbstring  \
     curl      \
     ctype     \
@@ -32,3 +33,7 @@ RUN \
     zip       \
     pdo       \
     pdo_mysql
+
+RUN docker-php-ext-enable mcrypt
+
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

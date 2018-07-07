@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   web:
@@ -19,6 +19,8 @@ services:
       - phpvegas-network
 
   redis:
+    build:
+      context: ./redis-data
     image: redis:latest
     ports:
       - "6379:6379"
@@ -26,7 +28,9 @@ services:
       - phpvegas-network
 
   mysql:
-    image: mysql:latest
+    build:
+      context: ./mysql-data
+    image: mysql:5.7
     ports:
       - "3306:3306"
     networks:
