@@ -8215,12 +8215,8 @@ footer .copy-right-line p {
   font-weight: bold;
 }
 
-img.showcase {
-  margin: auto;
-  width: 100%;
-}
-
-iframe {
+.showcase {
+  margin: 10px auto;
   width: 100%;
 }
 

@@ -32,7 +32,7 @@
                         <img class="showcase" src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_limit,f_auto,w_620/v1530647698/df6mjyyahweszjsmrkco.jpg">
                     </div>
                     <div class="col-sm-12 col-md-5 ">
-                        <iframe src="https://www.indiegogo.com/project/phplashy-the-official-php-vegas-elephpant-software-toys/embedded/18638867" width="300px" height="435px" frameborder="0" scrolling="no"></iframe>
+                        <iframe src="https://www.indiegogo.com/project/phplashy-the-official-php-vegas-elephpant-software-toys/embedded/18638867" width="300px" height="435px" frameborder="0" scrolling="no" class="showcase"></iframe>
                     </div>
                 </div>
                 {{--<div class="col-md-4 col-sm-12">--}}
