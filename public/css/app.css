@@ -7742,6 +7742,7 @@ button.close {
 
 .hero-banner .showcase {
   margin-top: 0;
+  max-width: 100%;
 }
 
 .hero-banner .caption {
@@ -8211,8 +8212,16 @@ footer .copy-right-line p {
 
 .php-purple {
   color: #4F5B93;
-  text-transform: uppercase;
   font-weight: bold;
+}
+
+img.showcase {
+  margin: auto;
+  width: 100%;
+}
+
+iframe {
+  width: 100%;
 }
 
 /**

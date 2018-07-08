@@ -75,6 +75,11 @@
                             {{--</a>--}}
                         {{--</li>--}}
                         <li>
+                            <a href="{{ route('elephpant') }}">
+                                Elephpant
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ route('contact') }}">
                                 Contact
                             </a>
