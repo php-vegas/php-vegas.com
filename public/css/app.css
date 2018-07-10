@@ -7740,10 +7740,6 @@ button.close {
   max-width: 100%;
 }
 
-.hero-banner .showcase {
-  margin-top: 0;
-}
-
 .hero-banner .caption {
   position: absolute;
   top: 50%;
@@ -8211,8 +8207,12 @@ footer .copy-right-line p {
 
 .php-purple {
   color: #4F5B93;
-  text-transform: uppercase;
   font-weight: bold;
+}
+
+.showcase {
+  margin: 10px auto;
+  width: 100%;
 }
 
 /**
