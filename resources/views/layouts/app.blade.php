@@ -60,7 +60,7 @@
                             {{--</ul>--}}
                         </li>
                         <li class="dropdown">
-                            <a href="{{ route('meetup-events') }}">Meetup Events</a>
+                            <a href="https://www.meetup.com/PHP-Vegas/">Meetup Events</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="{{ route('request-topic') }}">
